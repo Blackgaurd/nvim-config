@@ -2,7 +2,7 @@ return {
     'goolord/alpha-nvim',
     dependencies = {
         'nvim-tree/nvim-web-devicons',
-        'nvim-lua/plenary.nvim'
+        'nvim-lua/plenary.nvim',
     },
     config = function ()
         local alpha = require("alpha")
@@ -25,6 +25,7 @@ return {
             dashboard.button("r", "Recent files", ":Telescope oldfiles<CR>"),
             dashboard.button("p", "Find file", ":Telescope find_files<CR>"),
             dashboard.button("f", "Find text", ":Telescope live_grep<CR>"),
+            dashboard.button("b", "Open file system", ":Neotree filesystem toggle left<CR>"),
             dashboard.button("q", "Quit", ":qa<CR>"),
         }
 
@@ -47,10 +48,10 @@ return {
             local stats = package_stats()
 
             return string.format(
-                "In %d ms: %d loaded / %d installed.",
-                stats.time,
+                "%d loaded / %d installed (%d ms)",
                 stats.loaded,
-                stats.count
+                stats.count,
+                stats.time
             )
         end
 

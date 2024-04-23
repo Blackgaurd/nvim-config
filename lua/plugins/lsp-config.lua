@@ -12,13 +12,19 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "lua_ls",   -- lua
-                    "bashls",   -- bash
-                    "clangd",   -- c/c++
-                    "gopls",    -- go
-                    "tsserver", -- js/ts
-                    "ltex",     -- latex
-                    "pyright",  -- python
+                    "bashls",    -- bash
+                    "clangd",    -- c/c++
+                    "cssls",     -- css
+                    "gopls",     -- go
+                    "html",      -- html
+                    "ltex",      -- latex
+                    "lua_ls",    -- lua
+                    "marksman",  -- markdown
+                    "ocamllsp",  -- ocaml
+                    "ruff",      -- python
+                    "svelte",    -- svelte
+                    "tsserver",  -- js/ts
+                    "typst_lsp", -- typst
                 }
             })
         end
@@ -30,15 +36,19 @@ return {
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
             local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({ capabilities = capabilities })
             lspconfig.bashls.setup({ capabilities = capabilities })
-            lspconfig.clangd.setup({
-                capabilities = capabilities
-            })
+            lspconfig.clangd.setup({ capabilities = capabilities })
+            lspconfig.cssls.setup({ capabilities = capabilities })
             lspconfig.gopls.setup({ capabilities = capabilities })
-            lspconfig.tsserver.setup({ capabilities = capabilities })
+            lspconfig.html.setup({ capabilities = capabilities })
             lspconfig.ltex.setup({ capabilities = capabilities })
-            lspconfig.pyright.setup({ capabilities = capabilities })
+            lspconfig.lua_ls.setup({ capabilities = capabilities })
+            lspconfig.marksman.setup({ capabilities = capabilities })
+            lspconfig.ocamllsp.setup({ capabilities = capabilities })
+            lspconfig.ruff.setup({ capabilities = capabilities })
+            lspconfig.svelte.setup({ capabilities = capabilities })
+            lspconfig.tsserver.setup({ capabilities = capabilities })
+            lspconfig.typst_lsp.setup({ capabilities = capabilities })
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, {})

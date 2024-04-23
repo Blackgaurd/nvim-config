@@ -31,6 +31,16 @@ vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { silent=true })
 vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { silent=true })
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { silent=true })
 
+-- filetypes
+vim.filetype.add({
+    extension = {
+        svx = "markdown",
+    }
+})
+
+-- set unnamed register to clipboard
+vim.cmd("set clipboard=unnamedplus")
+
 -- custom commands
 -- remove all trailing white space on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {

@@ -8,7 +8,8 @@ return {
     },
     config = function()
         -- vim.cmd ":Neotree"
-        vim.keymap.set("n", "<C-b>", ":Neotree filesystem toggle left<CR>", { silent=true })
+        vim.keymap.set("n", "<C-b>", ":Neotree filesystem toggle left<CR>", { silent = true })
+        vim.keymap.set("n", "<leader>b", ":Neotree buffers toggle left<CR>", { silent = true })
     end
 }
 
