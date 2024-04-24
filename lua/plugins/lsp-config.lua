@@ -12,19 +12,20 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "bashls",    -- bash
-                    "clangd",    -- c/c++
-                    "cssls",     -- css
-                    "gopls",     -- go
-                    "html",      -- html
-                    "ltex",      -- latex
-                    "lua_ls",    -- lua
-                    "marksman",  -- markdown
-                    "ocamllsp",  -- ocaml
-                    "ruff",      -- python
-                    "svelte",    -- svelte
-                    "tsserver",  -- js/ts
-                    "typst_lsp", -- typst
+                    "bashls",        -- bash
+                    "clangd",        -- c/c++
+                    "cssls",         -- css
+                    "gopls",         -- go
+                    "html",          -- html
+                    "ltex",          -- latex
+                    "lua_ls",        -- lua
+                    "marksman",      -- markdown
+                    "ocamllsp",      -- ocaml
+                    "ruff",          -- python
+                    "rust_analyzer", -- rust
+                    "svelte",        -- svelte
+                    "tsserver",      -- js/ts
+                    "typst_lsp",     -- typst
                 }
             })
         end
@@ -46,6 +47,7 @@ return {
             lspconfig.marksman.setup({ capabilities = capabilities })
             lspconfig.ocamllsp.setup({ capabilities = capabilities })
             lspconfig.ruff.setup({ capabilities = capabilities })
+            lspconfig.rust_analyzer.setup({ capabilities = capabilities })
             lspconfig.svelte.setup({ capabilities = capabilities })
             lspconfig.tsserver.setup({ capabilities = capabilities })
             lspconfig.typst_lsp.setup({ capabilities = capabilities })
