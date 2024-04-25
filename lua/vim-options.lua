@@ -25,6 +25,14 @@ vim.cmd("set relativenumber")
 vim.cmd("autocmd InsertEnter * set norelativenumber")
 vim.cmd("autocmd InsertLeave * set relativenumber")
 
+-- set unnamed register to clipboard
+vim.cmd("set clipboard=unnamedplus")
+
+-- highlight current line
+vim.cmd("set cursorline")
+vim.cmd("autocmd InsertEnter * set nocursorline")
+vim.cmd("autocmd InsertLeave * set cursorline")
+
 -- custom command
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { silent=true })
 vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { silent=true })
@@ -37,9 +45,7 @@ vim.filetype.add({
         svx = "markdown",
     }
 })
-
--- set unnamed register to clipboard
-vim.cmd("set clipboard=unnamedplus")
+vim.cmd("autocmd FileType haskell setlocal shiftwidth=2 softtabstop=2 expandtab")
 
 -- custom commands
 -- remove all trailing white space on save
