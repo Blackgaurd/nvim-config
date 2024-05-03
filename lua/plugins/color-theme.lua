@@ -5,7 +5,7 @@ local catppuccin = {
 	name = "catppuccin",
 	priority = 1000,
 	config = function()
-		vim.cmd.colorscheme("catppuccin")
+		vim.cmd.colorscheme("catppuccin-frappe")
 	end,
 }
 
@@ -16,4 +16,12 @@ local onedark = {
 	end,
 }
 
-return onedark
+local onedarkpro = {
+	"olimorris/onedarkpro.nvim",
+	priority = 1000,
+	config = function()
+		vim.cmd.colorscheme("onedark")
+	end,
+}
+
+return catppuccin

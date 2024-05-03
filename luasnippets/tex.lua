@@ -97,6 +97,66 @@ local matching_brackets = {
 return {
 	-- math snippets
 	s({
+		trig = "\\swao",
+		trigEngine = "plain",
+		name = "leftrightarrow",
+		snippetType = "autosnippet",
+		hidden = true,
+	}, {
+		t("\\leftrightarrow"),
+	}, {
+		condition = in_math,
+	}),
+	s({
+		trig = "\\xra",
+		trigEngine = "plain",
+		name = "xrightarrow",
+		snippetType = "autosnippet",
+		hidden = true,
+	}, {
+		t("\\xrightarrow"),
+	}, {
+		condition = in_math,
+	}),
+	s({
+		trig = "([A-Za-z\\d)}])\\_([A-Za-z\\d\\-+\\_\\\\][A-Za-z\\.\\d-+\\_=])",
+		trigEngine = "ecma",
+		name = "auto subscript",
+		snippetType = "autosnippet",
+		hidden = true,
+	}, {
+		d(1, function(_, snip)
+			local before = snip.captures[1]
+			local after = snip.captures[2]
+			return sn(nil, {
+				t(before .. "_{" .. after),
+				i(1),
+				t("}"),
+			})
+		end),
+	}, {
+		condition = in_math,
+	}),
+	s({
+		trig = "([A-Za-z\\d)}])\\^([A-Za-z\\d\\-+\\^\\\\][A-Za-z\\.\\d-+\\^=])",
+		trigEngine = "ecma",
+		name = "auto supscript",
+		snippetType = "autosnippet",
+		hidden = true,
+	}, {
+		d(1, function(_, snip)
+			local before = snip.captures[1]
+			local after = snip.captures[2]
+			return sn(nil, {
+				t(before .. "^{" .. after),
+				i(1),
+				t("}"),
+			})
+		end),
+	}, {
+		condition = in_math,
+	}),
+	s({
 		trig = "@([a-zA-Z])",
 		trigEngine = "pattern",
 		name = "greek letters",
@@ -186,7 +246,7 @@ return {
 		snippetType = "autosnippet",
 		hidden = true,
 	}, {
-		t("\\varempty"),
+		t("\\varnothing"),
 	}, {
 		condition = in_math,
 	}),
@@ -208,7 +268,7 @@ return {
 		snippetType = "autosnippet",
 		hidden = true,
 	}, {
-		t("\\mapto"),
+		t("\\mapsto"),
 	}, {
 		condition = in_math,
 	}),
@@ -352,7 +412,7 @@ return {
 	}, {
 		condition = in_math,
 	}),
-	s({
+	--[[ s({
 		trig = "\\left([\\[\\({])",
 		trigEngine = "ecma",
 		name = "left/right brackets",
@@ -366,7 +426,7 @@ return {
 		end),
 	}, {
 		condition = in_math,
-	}),
+	}), ]]
 
 	-- non-math snippets
 	s({
@@ -470,8 +530,25 @@ return {
 		i(1),
 		t({ "}", "    " }),
 		i(0),
-		t("\\end{"),
+		t({ "", "\\end{" }),
 		rep(1),
 		t("}"),
+	}),
+	s({
+		trig = "\\\\(statement|claim|theorem|lemma|property|problem|exercise|corollary|proposition|definition|example|notation|recall|note|remark|question|solution|proof)",
+		trigEngine = "ecma",
+		name = "theorem like",
+		dscr = "theorem like environment",
+		snippetType = "autosnippet",
+		hidden = true,
+	}, {
+		d(1, function(_, snip)
+			local cap = snip.captures[1]
+			return sn(nil, {
+				t({ "\\begin{" .. cap .. "}", "    " }),
+				i(1),
+				t({ "", "\\end{" .. cap .. "}" }),
+			})
+		end),
 	}),
 }

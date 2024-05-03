@@ -19,7 +19,7 @@ return {
                     "gopls",         -- go
                     "hls",           -- haskell
                     "html",          -- html
-                    "ltex",          -- latex
+                    "texlab",        -- latex
                     "lua_ls",        -- lua
                     "marksman",      -- markdown
                     "ocamllsp",      -- ocaml
@@ -44,9 +44,9 @@ return {
 			lspconfig.clangd.setup({ capabilities = capabilities })
 			lspconfig.cssls.setup({ capabilities = capabilities })
 			lspconfig.gopls.setup({ capabilities = capabilities })
-			lspconfig.hls.setup({ capabilities = capabilities })
+			lspconfig.hls.setup({ capabilities = capabilities, filetypes = { "haskell", "lhaskell", "cabal" } })
 			lspconfig.html.setup({ capabilities = capabilities })
-			lspconfig.ltex.setup({ capabilities = capabilities })
+			lspconfig.texlab.setup({ capabilities = capabilities })
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.marksman.setup({ capabilities = capabilities })
 			lspconfig.ocamllsp.setup({ capabilities = capabilities })

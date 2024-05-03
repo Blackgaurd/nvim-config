@@ -35,19 +35,20 @@ return {
 
 			local loaded = lazy.stats().loaded
 			local count = lazy.stats().count
-			local time = lazy.stats().startuptime
+			-- local time = lazy.stats().startuptime
 
 			return {
 				loaded = loaded,
 				count = count,
-				time = time,
+				-- time = time,
 			}
 		end
 
 		local function footer()
 			local stats = package_stats()
 
-			return string.format("%d loaded / %d installed (%d ms)", stats.loaded, stats.count, stats.time)
+			return string.format("%d loaded / %d installed", stats.loaded, stats.count)
+			-- return string.format("%d loaded / %d installed (%d ms)", stats.loaded, stats.count, stats.time)
 		end
 
 		dashboard.section.footer.val = footer()

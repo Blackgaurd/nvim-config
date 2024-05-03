@@ -22,11 +22,12 @@ return {
 		telescope.setup({
 			defaults = {
 				file_ignore_patterns = {
-					"node_modules",
+					".jpeg",
+					".jpg",
 					".pdf",
 					".png",
-					".jpg",
-					".jpeg",
+					"dist-newstyle",
+					"node_modules",
 				},
 			},
 			extensions = {
