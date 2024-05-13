@@ -1,5 +1,4 @@
 ---@diagnostic disable: unused-local
--- .tex files
 
 local ls = require("luasnip")
 local s = ls.snippet

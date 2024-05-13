@@ -41,7 +41,7 @@ return {
 
 			local lspconfig = require("lspconfig")
 			lspconfig.bashls.setup({ capabilities = capabilities })
-			lspconfig.clangd.setup({ capabilities = capabilities })
+			-- lspconfig.clangd.setup({ capabilities = capabilities })
 			lspconfig.cssls.setup({ capabilities = capabilities })
 			lspconfig.gopls.setup({ capabilities = capabilities })
 			lspconfig.hls.setup({ capabilities = capabilities, filetypes = { "haskell", "lhaskell", "cabal" } })
