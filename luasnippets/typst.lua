@@ -104,6 +104,17 @@ local snippets = {
 	}, {
 		condition = in_math,
 	}),
+	s({
+		trig = "sse",
+		trigEngine = "plain",
+		name = "subset.eq",
+		snippetType = "autosnippet",
+		hidden = true,
+	}, {
+		t("subset.eq"),
+	}, {
+		condition = in_math,
+	}),
 }
 
 return snippets

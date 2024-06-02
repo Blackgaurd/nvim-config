@@ -19,13 +19,13 @@ return {
                     "gopls",         -- go
                     "hls",           -- haskell
                     "html",          -- html
-                    "texlab",        -- latex
                     "lua_ls",        -- lua
                     "marksman",      -- markdown
                     "ocamllsp",      -- ocaml
-                    "ruff",          -- python
+                    "pyright",       -- python
                     "rust_analyzer", -- rust
                     "svelte",        -- svelte
+                    "texlab",        -- latex
                     "tsserver",      -- js/ts
                     "typst_lsp",     -- typst
                 }
@@ -46,13 +46,13 @@ return {
 			lspconfig.gopls.setup({ capabilities = capabilities })
 			lspconfig.hls.setup({ capabilities = capabilities, filetypes = { "haskell", "lhaskell", "cabal" } })
 			lspconfig.html.setup({ capabilities = capabilities })
-			lspconfig.texlab.setup({ capabilities = capabilities })
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.marksman.setup({ capabilities = capabilities })
 			lspconfig.ocamllsp.setup({ capabilities = capabilities })
-			lspconfig.ruff.setup({ capabilities = capabilities })
+			lspconfig.pyright.setup({ capabilities = capabilities })
 			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 			lspconfig.svelte.setup({ capabilities = capabilities })
+			lspconfig.texlab.setup({ capabilities = capabilities })
 			lspconfig.tsserver.setup({ capabilities = capabilities })
 			lspconfig.typst_lsp.setup({ capabilities = capabilities })
 

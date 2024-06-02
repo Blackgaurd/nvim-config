@@ -24,4 +24,24 @@ local onedarkpro = {
 	end,
 }
 
+local kanagawa = {
+	"rebelot/kanagawa.nvim",
+	priority = 1000,
+	config = function()
+		require("kanagawa").setup({
+			theme = "dragon",
+		})
+		vim.cmd.colorscheme("kanagawa")
+	end,
+}
+
+local material = {
+	"marko-cerovac/material.nvim",
+	priority = 1000,
+	config = function()
+		vim.cmd.colorscheme("material")
+		vim.g.material_style = "darker"
+	end,
+}
+
 return catppuccin
