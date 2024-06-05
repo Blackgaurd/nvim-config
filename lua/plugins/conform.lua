@@ -1,5 +1,5 @@
 local clang_format_opts =
-	"-style={BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 100, AllowShortFunctionsOnASingleLine: Empty, DerivePointerAlignment: false, PointerAlignment: Left, SortIncludes: true, SpaceBeforeAssignmentOperators: true, TabWidth: 4}"
+	"-style={BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 100, AllowShortFunctionsOnASingleLine: Empty, DerivePointerAlignment: false, PointerAlignment: Right, SortIncludes: true, SpaceBeforeAssignmentOperators: true, TabWidth: 4}"
 
 return {
 	"stevearc/conform.nvim",
