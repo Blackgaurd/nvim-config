@@ -21,7 +21,7 @@ return {
 				python = { "ruff format" },
 				racket = { "raco fmt" },
 				rust = { "rustfmt" },
-				typst = { "typstfmt" },
+				typst = { "typstyle" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
